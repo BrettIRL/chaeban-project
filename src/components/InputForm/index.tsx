@@ -4,7 +4,7 @@ import ThemeSelector from "components/ThemeSelector";
 import SubmitButton from "components/SubmitButton";
 import { useFormData } from "hooks/useFormData";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { date, object, string } from "yup";
+import { date, number, object, string } from "yup";
 import "flatpickr/dist/themes/airbnb.css";
 
 function InputForm() {
@@ -14,7 +14,11 @@ function InputForm() {
     <main className="min-h-screen flex items-center py-16">
       <div className="container max-w-screen-md bg-secondary rounded-md p-8">
         <Formik
-          initialValues={{ date: null, message: "" }}
+          initialValues={{
+            date: null,
+            message: "",
+            theme: { layout: null, colorway: null },
+          }}
           validationSchema={object().shape({
             date: date()
               .required("Please select a date.")
@@ -22,10 +26,14 @@ function InputForm() {
             message: string()
               .required("Please enter a message")
               .min(5, "Message must be longer than 4 characters"),
+            theme: object().shape({
+              layout: number().required(),
+              colorway: object().required(),
+            }),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            const { date, message } = values;
-            state.setData({ date, message });
+            const { date, message, theme } = values;
+            state.setData({ date, message, theme });
             setSubmitting(false);
           }}
         >
@@ -78,7 +86,12 @@ function InputForm() {
               </h3>
               <label className="block">
                 <span className="text-white hidden">Theme</span>
-                <ThemeSelector className="mb-6" />
+                <ThemeSelector
+                  className="mb-6"
+                  onChange={(theme) => {
+                    setFieldValue("theme", theme, false);
+                  }}
+                />
               </label>
               <div className="flex justify-end">
                 <SubmitButton isLoading={isSubmitting} />

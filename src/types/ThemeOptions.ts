@@ -9,6 +9,7 @@ export interface Layout {
 export interface Colorway {
   id: number;
   name: string;
+  icon?: IconType;
   bgColor: RGBColor;
   textColor: RGBColor;
   btnColor: RGBColor;

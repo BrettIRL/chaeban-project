@@ -1,25 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import cn from "classnames";
-import {
-  useColorways,
-  useCustomOptions,
-  useLayouts,
-} from "hooks/useThemeOptions";
+import { useColorways, useLayouts } from "hooks/useThemeOptions";
 import ThemeOption from "components/ThemeOption";
 import ColorSwatch from "components/ColorSwatch";
 import CustomColorPicker from "components/CustomColorPicker";
+import { Colorway } from "types/ThemeOptions";
+import IconOption from "components/IconOption";
 
 interface ThemeSelectorProps {
   className: string;
+  onChange: (theme: { layout: number; colorway: Colorway }) => void;
 }
 
-function ThemeSelector({ className }: ThemeSelectorProps) {
-  const [selectedLayout, setSelectedLayout] = useState<number>(1);
-  const [selectedColorway, setSelectedColorway] = useState<number>(1);
-
+function ThemeSelector({ className, onChange }: ThemeSelectorProps) {
   const layouts = useLayouts();
   const colorways = useColorways();
-  const addOptions = useCustomOptions();
+
+  const [selectedLayout, setSelectedLayout] = useState<number>(1);
+  const [selectedColorway, setSelectedColorway] = useState<Colorway>(
+    colorways[0]
+  );
+
+  useEffect(() => {
+    onChange({ layout: selectedLayout, colorway: selectedColorway });
+    //eslint-disable-next-line
+  }, [selectedLayout, selectedColorway]);
 
   const layoutBlocks = layouts.map((layout) => (
     <ThemeOption
@@ -33,26 +38,15 @@ function ThemeSelector({ className }: ThemeSelectorProps) {
 
   const swatches = colorways.map((colorway) => (
     <ThemeOption
-      isSelected={selectedColorway === colorway.id}
-      onClick={() => setSelectedColorway(colorway.id)}
+      isSelected={selectedColorway.id === colorway.id}
+      onClick={() => setSelectedColorway(colorway)}
       key={colorway.id}
     >
-      <ColorSwatch colorway={colorway} />
-    </ThemeOption>
-  ));
-
-  const moreOptions = addOptions.map((opt) => (
-    <ThemeOption
-      isSelected={selectedColorway === opt.id}
-      onClick={() => setSelectedColorway(opt.id)}
-      key={opt.id}
-    >
-      <div className="h-full w-full text-gray-300 flex flex-col items-center">
-        <div className="h-3/4 flex items-center">
-          <opt.icon className="text-7xl" />
-        </div>
-        <p className="h-1/4 text-xl">{opt.name}</p>
-      </div>
+      {colorway.icon ? (
+        <IconOption colorway={colorway} />
+      ) : (
+        <ColorSwatch colorway={colorway} />
+      )}
     </ThemeOption>
   ));
 
@@ -61,11 +55,8 @@ function ThemeSelector({ className }: ThemeSelectorProps) {
       <h3>Select a Layout:</h3>
       <div className="flex justify-between my-4">{layoutBlocks}</div>
       <h3>Select a Colorway:</h3>
-      <div className="flex justify-between flex-wrap mt-4">
-        {swatches}
-        {moreOptions}
-      </div>
-      {selectedColorway === 6 && (
+      <div className="flex justify-between flex-wrap mt-4">{swatches}</div>
+      {selectedColorway.name === "Custom" && (
         <>
           <h3>Choose your Colors:</h3>
           <CustomColorPicker />

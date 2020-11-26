@@ -44,11 +44,24 @@ const colorways: Colorway[] = [
     btnColor: { r: 76, g: 142, b: 148 },
     btnTextColor: { r: 255, g: 255, b: 255 },
   },
-];
-
-const customOptions: CustomOption[] = [
-  { id: 5, name: "Image", icon: BsImageFill },
-  { id: 6, name: "Custom", icon: CgColorPicker },
+  {
+    id: 5,
+    name: "Image",
+    icon: BsImageFill,
+    bgColor: { r: 0, g: 0, b: 0, a: 0.4 },
+    textColor: { r: 255, g: 255, b: 255 },
+    btnColor: { r: 0, g: 0, b: 0, a: 0 },
+    btnTextColor: { r: 255, g: 255, b: 255 },
+  },
+  {
+    id: 6,
+    name: "Custom",
+    icon: CgColorPicker,
+    bgColor: { r: 247, g: 247, b: 247 },
+    textColor: { r: 0, g: 0, b: 0 },
+    btnColor: { r: 59, g: 130, b: 246 },
+    btnTextColor: { r: 255, g: 255, b: 255 },
+  },
 ];
 
 export function useLayouts() {
@@ -57,8 +70,4 @@ export function useLayouts() {
 
 export function useColorways() {
   return colorways;
-}
-
-export function useCustomOptions() {
-  return customOptions;
 }
