@@ -6,7 +6,7 @@ import { useFormData } from "hooks/useFormData";
 import { useHistory } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { date, number, object, string } from "yup";
-import "flatpickr/dist/themes/airbnb.css";
+import "flatpickr/dist/themes/dark.css";
 
 function InputForm() {
   const state = useFormData();
