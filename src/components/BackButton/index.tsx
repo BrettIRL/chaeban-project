@@ -13,7 +13,7 @@ function BackButton({ classNames }: BackButtonProps) {
   return (
     <button
       className={cn(
-        "h-12 w-32 text-lg font-bold rounded-sm flex justify-center items-center",
+        "h-12 w-32 text-lg font-bold focus:outline-none rounded-sm flex justify-center items-center",
         classNames
       )}
       style={{

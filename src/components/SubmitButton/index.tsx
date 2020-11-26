@@ -26,7 +26,7 @@ function SubmitButton({ isLoading }: SubmitButtonProps) {
   return (
     <button
       type="submit"
-      className="bg-accent h-12 w-full md:w-32 text-white text-lg font-bold rounded-sm flex justify-center items-center mt-1"
+      className="bg-accent h-12 w-full md:w-32 text-white text-lg font-bold rounded-sm focus:outline-none flex justify-center items-center mt-1"
     >
       {isLoading ? loader : btnContent}
     </button>
