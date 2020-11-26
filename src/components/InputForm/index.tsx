@@ -15,8 +15,8 @@ function InputForm() {
       <div className="container max-w-screen-md bg-secondary rounded-md p-8">
         <Formik
           initialValues={{
-            date: null,
-            message: "",
+            date: state.data.date,
+            message: state.data.message,
             theme: { layout: null, colorway: null },
           }}
           validationSchema={object().shape({
