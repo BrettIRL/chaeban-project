@@ -17,7 +17,7 @@ function InputForm() {
           initialValues={{
             date: state.data.date,
             message: state.data.message,
-            theme: { layout: null, colorway: null },
+            theme: { layout: 1, colorway: null },
           }}
           validationSchema={object().shape({
             date: date()

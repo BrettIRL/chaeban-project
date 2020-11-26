@@ -6,6 +6,7 @@ import ColorSwatch from "components/ColorSwatch";
 import CustomColorPicker from "components/CustomColorPicker";
 import { Colorway } from "types/ThemeOptions";
 import IconOption from "components/IconOption";
+import { useFormData } from "hooks/useFormData";
 
 interface ThemeSelectorProps {
   className: string;
@@ -13,12 +14,15 @@ interface ThemeSelectorProps {
 }
 
 function ThemeSelector({ className, onChange }: ThemeSelectorProps) {
+  const state = useFormData();
   const layouts = useLayouts();
   const colorways = useColorways();
 
-  const [selectedLayout, setSelectedLayout] = useState<number>(1);
+  const [selectedLayout, setSelectedLayout] = useState<number>(
+    state.data.theme.layout
+  );
   const [selectedColorway, setSelectedColorway] = useState<Colorway>(
-    colorways[0]
+    state.data.theme.colorway || colorways[0]
   );
 
   useEffect(() => {

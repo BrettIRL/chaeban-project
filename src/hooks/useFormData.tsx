@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { Colorway, Layout } from "types/ThemeOptions";
+import { Colorway } from "types/ThemeOptions";
 
 interface FormDataProviderProps {
   children: ReactNode;
@@ -9,8 +9,8 @@ type FormData = {
   date: Date | null;
   message: string;
   theme: {
-    layout: Layout | null;
-    colorway: Colorway | "image" | null;
+    layout: number;
+    colorway: Colorway | null;
   };
 };
 type State = {
@@ -30,7 +30,7 @@ function FormDataProvider({ children }: FormDataProviderProps) {
       date: null,
       message: "",
       theme: {
-        layout: null,
+        layout: 1,
         colorway: null,
       },
     },
