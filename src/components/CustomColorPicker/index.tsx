@@ -32,11 +32,11 @@ function CustomColorPicker({ onChange }: CustomColorPickerProps) {
   };
 
   return (
-    <div className="flex justify-between">
-      <div className="h-40 w-3/10 rounded-md overflow-hidden border-2 border-tertiary mt-4">
+    <div className="flex justify-between flex-wrap">
+      <div className="h-40 w-full md:w-3/10 rounded-md overflow-hidden border-2 border-tertiary mt-4">
         <ColorSwatch colorway={colorway} />
       </div>
-      <div className="w-65p mt-4 flex flex-wrap items-center">
+      <div className="w-full md:w-65p mt-4 flex flex-wrap items-center">
         <ColorPickerSwatch
           color={colorway.bgColor}
           label="Background Color"

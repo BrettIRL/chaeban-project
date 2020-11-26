@@ -17,7 +17,7 @@ function ColorPickerSwatch({ color, label, onChange }: ColorPickerSwatchProps) {
   };
 
   return (
-    <div className="w-1/2 relative">
+    <div className="w-full md:w-1/2 mb-2 md:mb-0 relative">
       <label className="flex items-center ">
         <div
           className="h-8 w-16 rounded-sm bg-white border-2 border-tertiary p-1 mr-2 cursor-pointer"

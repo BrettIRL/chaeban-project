@@ -13,7 +13,7 @@ function InputForm() {
   const history = useHistory();
 
   return (
-    <main className="min-h-screen flex items-center py-16">
+    <main className="min-h-screen flex items-center lg:py-16">
       <div className="container max-w-screen-md bg-secondary rounded-md p-8">
         <Formik
           initialValues={{
@@ -52,7 +52,7 @@ function InputForm() {
                 <span className="text-white hidden">Date</span>
                 <Flatpickr
                   name="date"
-                  className="form-input bg-tertiary text-white rounded-sm w-1/2 mb-6 block"
+                  className="form-input bg-tertiary text-white rounded-sm w-full md:w-1/2 mb-6 block"
                   placeholder="Date"
                   value={values.date ?? ""}
                   onChange={(date) => setFieldValue("date", date[0], true)}

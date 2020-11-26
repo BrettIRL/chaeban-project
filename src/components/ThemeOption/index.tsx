@@ -13,7 +13,7 @@ function ThemeOption({ isSelected, children, onClick }: ThemeOptionProps) {
   return (
     <div
       className={cn(
-        "h-40 w-3/10 rounded-md border-2 overflow-hidden mb-4",
+        "h-40 w-full md:w-3/10 rounded-md border-2 overflow-hidden mb-4",
         borderColor
       )}
       onClick={onClick}

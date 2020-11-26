@@ -56,8 +56,8 @@ function ThemeSelector({ className, onChange }: ThemeSelectorProps) {
 
   return (
     <div className={cn(className, "text-gray-400")}>
-      <h3>Select a Layout:</h3>
-      <div className="flex justify-between my-4">{layoutBlocks}</div>
+      <h3 className="hidden lg:block">Select a Layout:</h3>
+      <div className="hidden lg:flex justify-between my-4">{layoutBlocks}</div>
       <h3>Select a Colorway:</h3>
       <div className="flex justify-between flex-wrap mt-4">{swatches}</div>
       {selectedColorway.name === "Custom" && (

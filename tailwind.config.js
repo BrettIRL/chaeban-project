@@ -20,6 +20,7 @@ module.exports = {
         "accent-light": "#8cd582",
       },
       maxHeight: {
+        "1/2": "50vh",
         "3/5": "60vh",
         "4/5": "80vh",
       },

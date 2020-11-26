@@ -25,6 +25,8 @@ function ImageView({ children }: ImageViewProps) {
         background: `linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${
           unsplash.status === "loaded" ? unsplash.payload : ""
         })`,
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {children}
