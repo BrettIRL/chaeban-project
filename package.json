@@ -5,6 +5,7 @@
   "scripts": {
     "build:tailwind": "tailwind build src/styles/tailwind.css -o src/styles/tailwind.output.css",
     "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/styles/tailwind.output.css -c 'npm run build:tailwind'",
+    "prebuild": "NODE_ENV=production npm run build:tailwind",
     "dev": "npm-run-all build:tailwind --parallel watch:tailwind start",
     "start": "react-scripts start",
     "build": "react-scripts build",
