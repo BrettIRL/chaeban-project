@@ -19,6 +19,10 @@ module.exports = {
         accent: "#78ce6d",
         "accent-light": "#8cd582",
       },
+      maxHeight: {
+        "3/5": "60vh",
+        "4/5": "80vh",
+      },
       width: {
         "3/10": "30%",
         "6/10": "60%",

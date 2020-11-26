@@ -15,9 +15,3 @@ export interface Colorway {
   btnColor: RGBColor;
   btnTextColor: RGBColor;
 }
-
-export interface CustomOption {
-  id: number;
-  name: string;
-  icon: IconType;
-}

@@ -3,12 +3,14 @@ import Flatpickr from "react-flatpickr";
 import ThemeSelector from "components/ThemeSelector";
 import SubmitButton from "components/SubmitButton";
 import { useFormData } from "hooks/useFormData";
+import { useHistory } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { date, number, object, string } from "yup";
 import "flatpickr/dist/themes/airbnb.css";
 
 function InputForm() {
   const state = useFormData();
+  const history = useHistory();
 
   return (
     <main className="min-h-screen flex items-center py-16">
@@ -35,6 +37,7 @@ function InputForm() {
             const { date, message, theme } = values;
             state.setData({ date, message, theme });
             setSubmitting(false);
+            history.push("/output");
           }}
         >
           {({ setFieldValue, values, isSubmitting }) => (

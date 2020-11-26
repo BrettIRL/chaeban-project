@@ -3,7 +3,7 @@ import { ReactComponent as LayoutTwo } from "assets/svg/layoutTwo.svg";
 import { ReactComponent as LayoutThree } from "assets/svg/layoutThree.svg";
 import { BsImageFill } from "react-icons/bs";
 import { CgColorPicker } from "react-icons/cg";
-import { Layout, Colorway, CustomOption } from "types/ThemeOptions";
+import { Layout, Colorway } from "types/ThemeOptions";
 
 const layouts: Layout[] = [
   { id: 1, element: LayoutOne },
