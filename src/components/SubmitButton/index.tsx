@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "components/Loader";
 import { IoIosRocket } from "react-icons/io";
 
 interface SubmitButtonProps {
@@ -7,7 +8,12 @@ interface SubmitButtonProps {
 
 function SubmitButton({ isLoading }: SubmitButtonProps) {
   const loader = (
-    <div className="loader ease-linear rounded-full border-2 border-t-2 border-accent-light h-5 w-5"></div>
+    <Loader
+      size="1.25rem"
+      borderWidth="2px"
+      borderColor="#8cd582"
+      borderTopColor="#fff"
+    />
   );
 
   const btnContent = (

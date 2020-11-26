@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { useUnsplash } from "hooks/useUnsplash";
+import Loader from "./Loader";
 
 interface ImageViewProps {
   children: ReactNode;
@@ -9,7 +10,14 @@ function ImageView({ children }: ImageViewProps) {
   const unsplash = useUnsplash();
 
   return unsplash.status === "loading" ? (
-    <p>Loading</p>
+    <div className="min-w-screen min-h-screen flex justify-center items-center">
+      <Loader
+        size="8rem"
+        borderWidth="5px"
+        borderColor="#404a53"
+        borderTopColor="#fff"
+      />
+    </div>
   ) : (
     <div
       className="min-h-screen text-white flex items-center justify-center"
