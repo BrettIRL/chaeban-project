@@ -4,7 +4,18 @@ import { Colorway } from "types/ThemeOptions";
 import ColorPickerSwatch from "components/ColorPickerSwatch";
 import { RGBColor } from "react-color";
 
-function CustomColorPicker() {
+type CustomColors = {
+  bgColor: RGBColor;
+  textColor: RGBColor;
+  btnColor: RGBColor;
+  btnTextColor: RGBColor;
+};
+
+interface CustomColorPickerProps {
+  onChange: (color: CustomColors) => void;
+}
+
+function CustomColorPicker({ onChange }: CustomColorPickerProps) {
   const [colorway, setColorway] = useState<Colorway>({
     id: 9999,
     name: "Custom",
@@ -16,6 +27,8 @@ function CustomColorPicker() {
 
   const colorHandler = (key: string, color: RGBColor) => {
     setColorway({ ...colorway, [key]: color });
+    const { bgColor, textColor, btnColor, btnTextColor } = colorway;
+    onChange({ bgColor, textColor, btnColor, btnTextColor, [key]: color });
   };
 
   return (

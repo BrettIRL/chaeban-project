@@ -59,7 +59,11 @@ function ThemeSelector({ className, onChange }: ThemeSelectorProps) {
       {selectedColorway.name === "Custom" && (
         <>
           <h3>Choose your Colors:</h3>
-          <CustomColorPicker />
+          <CustomColorPicker
+            onChange={(customColors) =>
+              setSelectedColorway({ ...selectedColorway, ...customColors })
+            }
+          />
         </>
       )}
     </div>

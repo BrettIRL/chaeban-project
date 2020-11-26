@@ -32,7 +32,7 @@ function ColorPickerSwatch({ color, label, onChange }: ColorPickerSwatchProps) {
       </label>
       {showPicker && (
         <div className="absolute z-10 top-12 left-3 h-16 w-16">
-          <TwitterPicker color={color} onChange={handleChange} />
+          <TwitterPicker color={color} onChangeComplete={handleChange} />
         </div>
       )}
     </div>
