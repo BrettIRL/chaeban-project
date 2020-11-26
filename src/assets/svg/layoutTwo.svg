@@ -1,10 +1,9 @@
 <svg height="160" viewbox="0 0 210 160" xlmns="http://www.w3.org/2000/svg">
     <g fill="#d8d8d8" fill-rule="evenodd">
-        <rect height="24" rx="4" width="100" x="55" y="27" />
-        <path d="m55 66h100" stroke="#979797" stroke-linecap="square" />
-        <rect height="6" rx="3" width="100" x="55" y="80" />
-        <rect height="6" rx="3" width="100" x="55" y="92" />
-        <rect height="6" rx="3" width="100" x="55" y="104" />
-        <rect height="6" rx="3" width="100" x="55" y="116" />
+        <rect height="34" rx="4" width="45" x="7" y="7" />
+        <rect height="6" rx="3" width="100" x="55" y="65" />
+        <rect height="6" rx="3" width="100" x="55" y="77" />
+        <rect height="6" rx="3" width="100" x="55" y="89" />
+        <rect height="6" rx="3" width="100" x="55" y="101" />
     </g>
 </svg>
