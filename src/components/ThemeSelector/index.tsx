@@ -7,6 +7,7 @@ import {
 } from "hooks/useThemeOptions";
 import ThemeOption from "components/ThemeOption";
 import ColorSwatch from "components/ColorSwatch";
+import CustomColorPicker from "components/CustomColorPicker";
 
 interface ThemeSelectorProps {
   className: string;
@@ -67,12 +68,7 @@ function ThemeSelector({ className }: ThemeSelectorProps) {
       {selectedColorway === 6 && (
         <>
           <h3>Choose your Colors:</h3>
-          <div className="flex mt-4">
-            <div className="bg-blue-400 h-36 w-1/4 rounded-md"></div>
-            <div className="bg-blue-400 h-36 w-1/4 rounded-md"></div>
-            <div className="bg-blue-400 h-36 w-1/4 rounded-md"></div>
-            <div className="bg-blue-400 h-36 w-1/4 rounded-md"></div>
-          </div>
+          <CustomColorPicker />
         </>
       )}
     </div>
