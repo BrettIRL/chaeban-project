@@ -13,7 +13,7 @@ function BackButton({ classNames }: BackButtonProps) {
   return (
     <button
       className={cn(
-        "h-12 w-32 text-lg font-bold focus:outline-none rounded-sm flex justify-center items-center",
+        "h-12 w-32 text-lg font-bold focus:outline-none rounded-sm flex justify-center items-center overflow-hidden animate-btn",
         classNames
       )}
       style={{
@@ -22,8 +22,11 @@ function BackButton({ classNames }: BackButtonProps) {
       }}
       onClick={() => history.push("/")}
     >
-      <IoArrowBackCircleSharp title="Back Arrow" className="text-2xl mr-2" />
-      Back
+      <IoArrowBackCircleSharp
+        title="Back Arrow"
+        className="text-xl absolute left-6"
+      />
+      <span className="absolute left-14">Back</span>
     </button>
   );
 }

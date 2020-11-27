@@ -18,15 +18,15 @@ function SubmitButton({ isLoading }: SubmitButtonProps) {
 
   const btnContent = (
     <>
-      <IoIosRocket title="rocket-icon" className="mr-2" />
-      Launch
+      <IoIosRocket title="rocket-icon" className="text-xl absolute left-4" />
+      <span className="absolute left-11">Launch</span>
     </>
   );
 
   return (
     <button
       type="submit"
-      className="bg-accent h-12 w-full md:w-32 text-white text-lg font-bold rounded-sm focus:outline-none flex justify-center items-center mt-1"
+      className="bg-accent h-12 w-full md:w-32 text-white text-lg font-bold relative rounded-sm focus:outline-none flex justify-center items-center overflow-hidden mt-1 animate-btn"
     >
       {isLoading ? loader : btnContent}
     </button>

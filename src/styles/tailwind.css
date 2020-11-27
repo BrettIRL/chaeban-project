@@ -27,6 +27,21 @@ body {
     animation: shake 0.5s ease-in-out forwards;
 }
 
+.animate-btn > svg {
+    transition: all 0.25s linear;
+}
+.animate-btn > span {
+    transition: all 0.25s linear;
+}
+.animate-btn:hover > svg {
+    left: 40%;
+    font-size: 2rem;
+}
+.animate-btn:hover > span {
+    left: 100%;
+    opacity: 0;
+}
+
 /* Override Flatpickr Theme */
 .flatpickr-calendar,
 .flatpickr-months .flatpickr-month,
