@@ -34,7 +34,7 @@ body {
     transition: all 0.25s linear;
 }
 .animate-btn:hover > svg {
-    left: 40%;
+    left: calc(50% - 1rem);
     font-size: 2rem;
 }
 .animate-btn:hover > span {

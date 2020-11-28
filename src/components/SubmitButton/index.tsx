@@ -18,8 +18,11 @@ function SubmitButton({ isLoading }: SubmitButtonProps) {
 
   const btnContent = (
     <>
-      <IoIosRocket title="rocket-icon" className="text-xl absolute left-4" />
-      <span className="absolute left-11">Launch</span>
+      <IoIosRocket
+        title="rocket-icon"
+        className="text-xl absolute left-28 sm:left-64 md:left-4"
+      />
+      <span className="absolute left-34 sm:left-72 md:left-11">Launch</span>
     </>
   );
 

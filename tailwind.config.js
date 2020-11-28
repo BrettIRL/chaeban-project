@@ -19,6 +19,9 @@ module.exports = {
         accent: "#78ce6d",
         "accent-light": "#8cd582",
       },
+      inset: {
+        34: "8.5rem",
+      },
       maxHeight: {
         "1/2": "50vh",
         "3/5": "60vh",
