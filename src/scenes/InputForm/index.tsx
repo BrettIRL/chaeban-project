@@ -52,7 +52,7 @@ function InputForm() {
                 <span className="text-white hidden">Date</span>
                 <Flatpickr
                   name="date"
-                  className="form-input bg-tertiary text-white rounded-sm w-full md:w-1/2 mb-6 block"
+                  className="form-input bg-tertiary text-white rounded-sm h-10 w-full md:w-1/2 mb-6 block"
                   placeholder="Date"
                   value={values.date ?? ""}
                   onChange={(date) => setFieldValue("date", date[0], true)}
